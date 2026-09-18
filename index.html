@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Offline App</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f9; }
+    h1 { color: #333; }
+    p { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>កម្មវិធី Offline របស់ខ្ញុំ</h1>
+  <p>ទោះបីជាគ្មាន Internet ក៏កម្មវិធីនេះនៅតែដើរ!</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker Registered!'))
+        .catch(err => console.log('Service Worker Failed:', err));
+    }
+  </script>
+</body>
+</html>
