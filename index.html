@@ -3,24 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Offline App</title>
-  <link rel="manifest" href="manifest.json">
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f9; }
-    h1 { color: #333; }
-    p { color: #666; }
-  </style>
+  <title>ចុះឈ្មោះ - Learning Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>កម្មវិធី Offline របស់ខ្ញុំ</h1>
-  <p>ទោះបីជាគ្មាន Internet ក៏កម្មវិធីនេះនៅតែដើរ!</p>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('Service Worker Registered!'))
-        .catch(err => console.log('Service Worker Failed:', err));
-    }
-  </script>
+  <header>
+    <h1>Code Learning Hub</h1>
+    <p>ចែករំលែកចំណេះដឹង IT និង ការសរសេរកូដ</p>
+  </header>
+
+  <main>
+    <section class="register-card">
+      <h2>ចុះឈ្មោះគណនីថ្មី (Register)</h2>
+      
+      <!-- action បញ្ជូនទិន្នន័យទៅ Backend Server -->
+      <form action="/register" method="POST">
+        <div class="input-group">
+          <label for="email">អ៊ីមែល (Email)</label>
+          <input type="email" id="email" name="email" placeholder="បញ្ចូលអ៊ីមែលរបស់អ្នក" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">ពាក្យសម្ងាត់ (Password)</label>
+          <input type="password" id="password" name="password" placeholder="បញ្ចូលពាក្យសម្ងាត់" required>
+        </div>
+
+        <button type="submit">ចុះឈ្មោះ (Sign Up)</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Code Learning Hub. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
